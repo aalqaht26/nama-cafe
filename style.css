@@ -90,6 +90,15 @@
     color:var(--cream);
     text-decoration:none;
     white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+  }
+  .header-logo-icon{
+    height:46px;
+    width:auto;
+    border-radius:3px;
+    flex-shrink:0;
   }
   .nav-links{
     display:flex;
@@ -177,6 +186,7 @@
     .mobile-menu-toggle{display:flex;}
     .header-inner{height:66px;}
     .header-logo{font-size:1.25rem;}
+    .header-logo-icon{height:36px;}
     .hero{min-height:calc(100vh - 66px);}
   }
 
