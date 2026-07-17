@@ -23,7 +23,15 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Notify Me</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
+  </div>
+  <div class="mobile-nav-panel" id="mobileNavPanel">
+    <a href="menu.html">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
@@ -171,6 +179,20 @@
   }
   wireForm('notifyFormHero', 'notifyNoteHero');
   wireForm('notifyFormFooter', 'notifyNoteFooter');
+
+  // Mobile menu toggle
+  var mobileToggle = document.getElementById('mobileMenuToggle');
+  var mobilePanel = document.getElementById('mobileNavPanel');
+  mobileToggle.addEventListener('click', function(){
+    var isOpen = mobilePanel.classList.toggle('open');
+    mobileToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mobilePanel.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobilePanel.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 
 </body>

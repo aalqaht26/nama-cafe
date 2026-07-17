@@ -131,12 +131,55 @@
   }
   .nav-cta:hover{background:var(--gold-deep); color:var(--cream);}
 
+  .mobile-menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    padding:6px;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-menu-toggle svg{
+    width:22px;
+    height:22px;
+    stroke:var(--cream);
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+  }
+
+  .mobile-nav-panel{
+    display:none;
+    flex-direction:column;
+    background:var(--charcoal);
+    border-top:1px solid rgba(251,243,231,0.12);
+  }
+  .mobile-nav-panel.open{display:flex;}
+  .mobile-nav-panel a{
+    padding:17px 32px;
+    color:rgba(251,243,231,0.85);
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    border-bottom:1px solid rgba(251,243,231,0.08);
+    transition:color 0.2s ease;
+  }
+  .mobile-nav-panel a:last-child{border-bottom:none;}
+  .mobile-nav-panel a:hover{color:var(--gold);}
+
   @media (max-width: 760px){
     .nav-links{display:none;}
+    .header-right{gap:16px;}
+    .mobile-menu-toggle{display:flex;}
     .header-inner{height:66px;}
     .header-logo{font-size:1.25rem;}
     .hero{min-height:calc(100vh - 66px);}
   }
+
 
   /* ---------- Branch SVG divider ---------- */
   .branch-divider{
